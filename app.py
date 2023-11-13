@@ -2,7 +2,7 @@ import requests
 import datetime,pytz
 import pandas as pd
 import numpy as np
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 import joblib
 from datetime import timedelta
 from flask import Flask, jsonify
@@ -40,8 +40,8 @@ def weatherforecaster(zawarudo, apichit):
 
   # temp
 
-  model_temp = load_model('/home/CheckmateRubik/mysite/lstm_temp.keras')
-  scaler_temp = joblib.load('/home/CheckmateRubik/mysite/scaler_temp.pkl')
+  model_temp = load_model('lstm_temp.keras')
+  scaler_temp = joblib.load('scaler_temp.pkl')
 
   prediction_data = data
   features = ['temp']
@@ -53,8 +53,8 @@ def weatherforecaster(zawarudo, apichit):
 
   # humid
 
-  model_humid = load_model('/home/CheckmateRubik/mysite/lstm_Humid.keras')
-  scaler_humid = joblib.load('/home/CheckmateRubik/mysite/scaler_humid.pkl')
+  model_humid = load_model('lstm_Humid.keras')
+  scaler_humid = joblib.load('scaler_humid.pkl')
 
   prediction_data = data
   features = ['humid']
@@ -66,8 +66,8 @@ def weatherforecaster(zawarudo, apichit):
 
   #rainfall
 
-  model_rf = load_model('/home/CheckmateRubik/mysite/lstm_prec.keras')
-  scaler_rf = joblib.load('/home/CheckmateRubik/mysite/scaler_rainfall.pkl')
+  model_rf = load_model('lstm_prec.keras')
+  scaler_rf = joblib.load('scaler_rainfall.pkl')
 
   prediction_data = data
   features = ['rainfall']
@@ -79,8 +79,8 @@ def weatherforecaster(zawarudo, apichit):
 
   #wind_direct
 
-  model_wd = load_model('/home/CheckmateRubik/mysite/lstm_WD.keras')
-  scaler_wd = joblib.load('/home/CheckmateRubik/mysite/scaler_wd.pkl')
+  model_wd = load_model('lstm_WD.keras')
+  scaler_wd = joblib.load('scaler_wd.pkl')
 
   prediction_data = data
   features = ['wind_direct']
@@ -92,8 +92,8 @@ def weatherforecaster(zawarudo, apichit):
 
   #wind_speed
 
-  model_ws = load_model('/home/CheckmateRubik/mysite/lstm_WS.keras')
-  scaler_ws = joblib.load('/home/CheckmateRubik/mysite/scaler_ws.pkl')
+  model_ws = load_model('lstm_WS.keras')
+  scaler_ws = joblib.load('scaler_ws.pkl')
 
   prediction_data = data
   features = ['wind_speed']
